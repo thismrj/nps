@@ -1,4 +1,4 @@
-const URL = "https://script.google.com/macros/s/AKfycbz9NyeyP-Zql4C5lzVOc8SNDRP_ccrPLJjqLNBGjr-QwI4fnjBILYN5C6SSVw_Ntv6gVg/exec"
+const URL = "https://script.google.com/macros/s/AKfycbxOaNRTOA40lgvzh8PQEcv_XE5TQj1uqzyK7_xJKaNcix3Z04n0klZA-ZpOayq-Q-j7/exec"
 const REDIRECT_URL = "https://motozilla.com.ua/";
 
 const $ = (selector, all = false) => all ? document.querySelectorAll(selector) : document.querySelector(selector)
