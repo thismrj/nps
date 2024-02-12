@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Net Promoter Score Form for the Motozila spare parts store">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.svg" />
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Survey</title>
+</head>
+
+<body>
+    <form id="nps" class="card" action="">
+        <div class="card__header">
+            <div class="header__container">
+                <a class="logo__container" href="https://motozilla.com.ua/" target="_self" rel="noreferrer">
+                    <img class="logo" src="assets/favicon.svg" alt="Логотип MotoZilla" draggable="false">
+                </a>
+                <div class="brand">
+                    <h1>Moto<span>Zilla</span></h1>
+                </div>
+            </div>
+        </div>
+        <div class="card__body">
+            <div class="card__item required">
+                <p  class="question">Яка ймовірність того, що ви порекомендуєте нас колегам або друзям?</p>
+                <P class="legend">Не буду рекомендувати</p>
+                <div class="col">
+                    <div class="row">
+                        <input type="radio" name="score" value="0" id="s0">
+                        <label for="s0" >
+                            <p>0</p>
+                        </label>
+                        <input type="radio" name="score" value="1" id="s1">
+                        <label for="s1" >
+                            <p>1</p>
+                        </label>
+                        <input type="radio" name="score" value="2" id="s2">
+                        <label for="s2" >
+                            <p>2</p>
+                        </label>
+                        <input type="radio" name="score" value="3" id="s3">
+                        <label for="s3" >
+                            <p>3</p>
+                        </label>
+                        <input type="radio" name="score" value="4" id="s4">
+                        <label for="s4" >
+                            <p>4</p>
+                        </label>
+                        <input type="radio" name="score" value="5" id="s5">
+                        <label for="s5" >
+                            <p>5</p>
+                        </label>
+                    </div>
+                    <div class="row">
+                        <input type="radio" name="score" value="6" id="s6">
+                        <label for="s6" >
+                            <p>6</p>
+                        </label>
+                        <input type="radio" name="score" value="7" id="s7">
+                        <label for="s7" >
+                            <p>7</p>
+                        </label>
+                        <input type="radio" name="score" value="8" id="s8">
+                        <label for="s8" >
+                            <p>8</p>
+                        </label>
+                        <input type="radio" name="score" value="9" id="s9">
+                        <label for="s9" >
+                            <p>9</p>
+                        </label>
+                        <input type="radio" name="score" value="10" id="s10">
+                        <label for="s10" >
+                            <p>10</p>
+                        </label>
+                    </div>
+                </div>
+                <p class="legend">Обов'язково рекомедую</p>
+            </div>
+            <div   class="thanks hide">
+                <p>Дякуємо за відгук</p>
+                <p>Через декілька секунд ви будете перенаправлині на головну сторінку магазину </p>
+            </div>
+            <div class="card__item">
+                <label  for="feedback" class="question">
+                    <p>Чому ви надали саме таку оцінку?</p>
+                </label>
+                <textarea  name="feedback" id="feedback" class="feedback" rows="5" autocomplete="off"
+                    placeholder="Ваші думки як покращити сервіс (необов'язково) ..."></textarea>
+            </div>
+        </div>
+        <div class="card__footer">
+            <label  class="submit" for="submit">Надіслати</label>
+            <input id="submit" type="submit" value="Надіслати" />
+        </div>
+    </form>
+</body>
+
+</html>
