@@ -38,6 +38,8 @@
 
 ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 10px -5px white;
+    -webkit-box-shadow: inset 0 0 10px -5px white;
+    -moz-box-shadow: inset 0 0 10px -5px white;
     border: solid 10px transparent;
     border-radius: 1rem;
 }
@@ -65,9 +67,11 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    padding: 7rem 0;
 }
 
 * {
+    -webkit-tap-highlight-color: transparent;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -78,9 +82,10 @@ body {
 .card {
     background-color: var(--secondary-bg-color);
     box-shadow: var(--box-shadow);
-    /* min-width: 22rem; */
+    -webkit-box-shadow: var(--box-shadow);
+    -moz-box-shadow: var(--box-shadow);
     max-width: 44rem;
-    padding: 2rem;
+    padding: 1.5rem;
     margin: 1rem;
     border-radius: 1.5rem;
     padding-top: calc(-1 * var(--header-offset));
@@ -113,6 +118,7 @@ input {
 input[type="radio"]:checked+label::after {
     width: 100%;
     height: 100%;
+    border: 1px solid var(--radio-selected-color);
 }
 
 input[type="radio"]:checked+label {
@@ -139,6 +145,7 @@ input[type="radio"]:checked+label {
     z-index: -1;
     border-radius: 50%;
     background-color: var(--radio-selected-color);
+    border: 0;
     transition-duration: .6s;
     opacity: 1;
 }
@@ -234,6 +241,8 @@ input[type="radio"]:checked+label {
     background-color: var(--button-bg-color);
     border: var(--button-border);
     box-shadow: var(--button-box-shadow);
+    -webkit-box-shadow: var(--button-box-shadow);
+    -moz-box-shadow: var(--button-box-shadow);
     position: relative;
     overflow: hidden;
     z-index: 10;
@@ -259,6 +268,8 @@ input[type="radio"]:checked+label {
 .submit:hover {
     opacity: 1;
     box-shadow: var(--button-hover-box-shadow);
+    -webkit-box-shadow: var(--button-hover-box-shadow);
+    -moz-box-shadow: var(--button-hover-box-shadow);
 }
 
 .card__header {
@@ -283,6 +294,8 @@ input[type="radio"]:checked+label {
 .logo {
     background-color: var(--secondary-bg-color);
     box-shadow: var(--box-shadow);
+    -webkit-box-shadow: var(--box-shadow);
+    -moz-box-shadow: var(--box-shadow);
     padding: 1.2rem;
     border-radius: 1rem;
 }
@@ -326,7 +339,9 @@ input[type="radio"]:checked+label {
         --button-hover-box-shadow: none;
     }
 
-    .submit { border: 0; }
+    .submit {
+        border: 0;
+    }
 }
 
 /* Responsive */
@@ -386,6 +401,22 @@ input[type="radio"]:checked+label {
     }
 }
 
+@media screen and (max-width: 375px) {
+    .row label {
+        height: 2.4rem;
+        font-size: .8rem;
+    }
+
+    .logo {
+        height: 7rem;
+    }
+
+    .brand {
+        padding: 1rem;
+        font-size: .6rem;
+    }
+}
+
 @media screen and (max-width: 320px) {
     .row label {
         height: 1rem;
@@ -395,7 +426,7 @@ input[type="radio"]:checked+label {
     .logo {
         height: 6rem;
     }
-    
+
     .brand {
         padding: 1rem;
         font-size: .5rem;
