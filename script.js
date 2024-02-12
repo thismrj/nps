@@ -6,12 +6,6 @@ const $ = (selector, all = false) => all ? document.querySelectorAll(selector) :
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("nps")
         .addEventListener("submit", onFormSumbit);
-
-    // TODO: DDoS Protect
-
-    $('#nxt').addEventListener('click', () => {
-        ShowNextSlide()
-    })
 });
 
 function onFormSumbit(event) {
@@ -32,7 +26,7 @@ function onFormSumbit(event) {
     });
 
     ShowNextSlide();
-    // DelayedRedirect(REDIRECT_URL, 5 * 1000);
+    DelayedRedirect(REDIRECT_URL, 2 * 1000);
 
     return false;
 }
@@ -42,14 +36,12 @@ function DelayedRedirect(url) {
 }
 
 function Highlight() {
-    $(".required").classList.add('highlight');
-    setTimeout(() => $(".required").classList.remove('highlight'), 3 * 1000);
+    $(`input[type="radio"] + label`, true).forEach(e => e.classList.add('highlight'));
+    setTimeout(() => $(`input[type="radio"] + label`, true).forEach(e => e.classList.remove('highlight')), 3 * 1000);
 }
 
 function ShowNextSlide() {
-
-
     $(".card__item", true).forEach(element => element.classList.add("hide"));
-    $(".thanks").classList.remove("hide");
     $(".card__footer").classList.add("hide");
+    $(".thanks").classList.remove("hide");
 }

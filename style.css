@@ -78,7 +78,7 @@ body {
 .card {
     background-color: var(--secondary-bg-color);
     box-shadow: var(--box-shadow);
-    min-width: 22rem;
+    /* min-width: 22rem; */
     max-width: 44rem;
     padding: 2rem;
     margin: 1rem;
@@ -160,6 +160,7 @@ input[type="radio"]:checked+label {
     aspect-ratio: 1 / 1;
     font-size: 1.4em;
     z-index: 1;
+    border: 1px dashed transparent;
 }
 
 .question {
@@ -239,7 +240,7 @@ input[type="radio"]:checked+label {
     transition: box-shadow 1s;
 }
 
-.submit::after {
+/* .submit::after {
     content: "➤";
     position: relative;
     left: 100%;
@@ -253,7 +254,7 @@ input[type="radio"]:checked+label {
 .submit:hover::after {
     left: 0%;
     opacity: 1;
-}
+} */
 
 .submit:hover {
     opacity: 1;
@@ -294,20 +295,6 @@ input[type="radio"]:checked+label {
     color: rgba(228, 5, 33, 1);
 }
 
-.slider {
-   overflow: hidden;
-   display: flex;
-   flex-direction: column;
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-    max-height: 36rem;
-}
-
-* { scroll-behavior: smooth;}
-
 .thanks p:first-child {
     text-align: center;
     font-size: 2rem;
@@ -339,10 +326,7 @@ input[type="radio"]:checked+label {
         --button-hover-box-shadow: none;
     }
 
-    .submit {
-
-        border: 0;
-    }
+    .submit { border: 0; }
 }
 
 /* Responsive */
@@ -376,6 +360,11 @@ input[type="radio"]:checked+label {
         font-size: 1rem;
     }
 
+    .brand {
+        font-size: .7rem;
+    }
+
+
     .question {
         font-size: .8rem;
     }
@@ -388,10 +377,6 @@ input[type="radio"]:checked+label {
         font-size: .7rem;
     }
 
-    .submit {
-        background-color: aliceblue;
-    }
-
     .thanks p:first-child {
         padding: 2rem 0 4rem 0;
     }
@@ -401,8 +386,24 @@ input[type="radio"]:checked+label {
     }
 }
 
+@media screen and (max-width: 320px) {
+    .row label {
+        height: 1rem;
+        font-size: .8rem;
+    }
+
+    .logo {
+        height: 6rem;
+    }
+    
+    .brand {
+        padding: 1rem;
+        font-size: .5rem;
+    }
+}
+
 @keyframes blink {
     50% {
-        border-left-color: var(--highlight-color);
+        border-color: var(--highlight-color);
     }
 }
