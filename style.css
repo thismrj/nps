@@ -1,31 +1,41 @@
+@font-face {
+    font-family: "Cera Pro";
+    src: 
+        local('CeraPro-Regular'), 
+        url("./assets//CeraPro-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cera Pro';
+    src: 
+        local('CeraPro-Bold'),
+        url("./assets/CeraPro-Bold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+}
+
 :root {
     --color-red: rgba(228, 5, 33, .8);
-
-    --primary-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --primary-font-family: 'Cera Pro', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --primary-font-size: ;
     --primary-font-color: black;
     --secondary-font-size: .8rem;
     --secondary-font-color: rgba(128, 128, 128, .7);
-
     --box-shadow: 0 0 22px -8px rgba(0, 0, 0, 1);
-
     --scroll-bar-color: rgba(76, 76, 81, 1);
     --scroll-bar-hover-color: rgba(76, 76, 81, 1);
-
     --primary-bg-color: white;
     --secondary-bg-color: white;
-
     --radio-selected-color: var(--color-red);
-    /* rgb(81, 19, 155); */
-
     --header-offset: -5rem;
-    /* !Dont even try to touch it */
-
+    --logo-height: 9.6rem;
+    --card-padding: 1.5rem;
     --button-bg-color: transparent;
     --button-box-shadow: none;
     --button-hover-box-shadow: 0px 0px 5px 0px rgba(145, 145, 145, 1);
     --button-border: 1px solid var(--secondary-font-color);
-
     --feedback-bg-color: var(--primary-bg-color);
     --radio-selected-color: rgba(228, 5, 33, .8);
     --radio-bg-color: rgba(125, 125, 125, .05);
@@ -59,15 +69,16 @@ html {
     background-color: var(--primary-bg-color);
     font-family: var(--primary-font-family);
     color: var(--primary-font-color);
+    min-height: 100%;
+    padding-top: calc(-1 * var(--header-offset));
 }
 
-body {
+body, html {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    padding: 7rem 0;
+    flex-basis: 100%;
 }
 
 * {
@@ -85,10 +96,10 @@ body {
     -webkit-box-shadow: var(--box-shadow);
     -moz-box-shadow: var(--box-shadow);
     max-width: 44rem;
-    padding: 1.5rem;
+    padding: var(--card-padding);
     margin: 1rem;
     border-radius: 1.5rem;
-    padding-top: calc(-1 * var(--header-offset));
+    padding-top: calc(var(--logo-height) / 2);
 }
 
 .card__item {
@@ -174,6 +185,7 @@ input[type="radio"]:checked+label {
     font-size: 1.1rem;
     padding: .5rem 0;
     font-weight: bold;
+    text-align: center;
 }
 
 .row {
@@ -249,22 +261,6 @@ input[type="radio"]:checked+label {
     transition: box-shadow 1s;
 }
 
-/* .submit::after {
-    content: "➤";
-    position: relative;
-    left: 100%;
-    margin-left: .5rem;
-    transition-duration: .75s;
-    transition-property: left, opacity;
-    transition-timing-function: ease-out;
-    opacity: 0;
-}
-
-.submit:hover::after {
-    left: 0%;
-    opacity: 1;
-} */
-
 .submit:hover {
     opacity: 1;
     box-shadow: var(--button-hover-box-shadow);
@@ -277,35 +273,23 @@ input[type="radio"]:checked+label {
     display: flex;
 }
 
-.header__container {
+.logo__container {
     display: flex;
     flex: 1 1 100%;
     align-items: center;
     justify-content: space-between;
     padding: 0 2rem;
-    margin-top: -10rem;
+    margin-top: calc(-1 * var(--logo-height));
 }
 
-.logo {
-    height: 9.6rem;
-}
-
-.brand,
 .logo {
     background-color: var(--secondary-bg-color);
-    box-shadow: var(--box-shadow);
     -webkit-box-shadow: var(--box-shadow);
     -moz-box-shadow: var(--box-shadow);
-    padding: 1.2rem;
+    box-shadow: var(--box-shadow);
+    height: var(--logo-height);
     border-radius: 1rem;
-}
-
-.brand {
-    font-weight: 800;
-}
-
-.brand span {
-    color: rgba(228, 5, 33, 1);
+    padding: 1.2rem;
 }
 
 .thanks p:first-child {
@@ -360,10 +344,6 @@ input[type="radio"]:checked+label {
         height: 2.5rem;
     }
 
-    .brand {
-        font-size: .8em;
-    }
-
     .header__container {
         padding: 0;
     }
@@ -374,11 +354,6 @@ input[type="radio"]:checked+label {
         height: 2.5rem;
         font-size: 1rem;
     }
-
-    .brand {
-        font-size: .7rem;
-    }
-
 
     .question {
         font-size: .8rem;
@@ -410,11 +385,6 @@ input[type="radio"]:checked+label {
     .logo {
         height: 7rem;
     }
-
-    .brand {
-        padding: 1rem;
-        font-size: .6rem;
-    }
 }
 
 @media screen and (max-width: 320px) {
@@ -425,11 +395,6 @@ input[type="radio"]:checked+label {
 
     .logo {
         height: 6rem;
-    }
-
-    .brand {
-        padding: 1rem;
-        font-size: .5rem;
     }
 }
 
