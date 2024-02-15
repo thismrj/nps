@@ -20,7 +20,7 @@ function onFormSumbit(event) {
         return false;
     }
 
-    fetch(URL, {
+    fetch(GOOGLE_APPS_URL, {
         mode: 'no-cors',
         method: 'POST',
         headers: { "Content-Type": "application/json" },
